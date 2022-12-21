@@ -1,0 +1,120 @@
+@import "../../../config-scss/rem-calc.scss";
+@import "../../../config-scss/btn.scss";
+:host {
+  main {
+    margin-top: remc(40);
+
+    .pokemon__names {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      height: 75px;
+
+      padding: 0 remc(30);
+
+      h1 {
+        color: var(--white);
+        font-size: remc(32);
+        text-transform: capitalize;
+      }
+
+      h2 {
+        position: absolute;
+        font-weight: 100;
+        top: 0;
+        font-size: remc(60);
+        color: rgba(255, 255, 255, 0.1);
+      }
+
+      h1,
+      h2 {
+        //Remove Bug Animation
+        -webkit-animation-fill-mode: none !important;
+        animation-fill-mode: none !important;
+      }
+    }
+
+    .pokemon__status {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: remc(-90);
+        left: remc(30);
+        max-width: remc(130);
+        z-index: 10;
+
+        //Remove Bug Animation
+        -webkit-animation-fill-mode: none !important;
+        animation-fill-mode: none !important;
+      }
+
+      &__statistics {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background: var(--white);
+
+        min-height: 43.9vh;
+        margin-top: remc(10);
+
+        padding: remc(110) remc(35) remc(30);
+        border-radius: remc(50) remc(50) 0 0;
+
+        h3 {
+          margin-bottom: remc (20);
+          font-weight: 700;
+          font-style: italic;
+          font-size: remc(32);
+          text-decoration: underline;
+          color: var(--secondary-color);
+        }
+
+        ol {
+          margin-top: remc(30);
+          li {
+            display: flex;
+            justify-content: space-between;
+            font-size: remc(18);
+            text-transform: capitalize;
+            line-height: 130%;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 420px) {
+      margin-top: remc(10);
+
+      .pokemon__names {
+        h1 {
+          font-size: remc(20);
+        }
+
+        h2 {
+          top: remc(35);
+          font-size: remc(20);
+        }
+      }
+
+      .pokemon__status {
+        position: relative;
+
+        img {
+          position: absolute;
+          top: remc(-80);
+          left: 0;
+          max-width: remc(100);
+        }
+
+        &__statistics {
+          min-height: 57vh;
+          padding-top: remc(50);
+        }
+      }
+    }
+  }
+}
